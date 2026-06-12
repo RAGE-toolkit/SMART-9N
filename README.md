@@ -1,2 +1,2 @@
 # SMART-9N
-A Nextflow workflow 
+Work in progress
