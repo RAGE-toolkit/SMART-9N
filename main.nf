@@ -16,32 +16,16 @@ include { DORADO_BARCODER }        from "${MODULES}/dorado_barcoder.nf"
 include { PLEX_FQ_FILES }          from "${MODULES}/plex_fq_files.nf"
 include { PLEX_DIRS }              from "${MODULES}/plex_dirs.nf"
 include { NANOSTAT }               from "${MODULES}/nanostat.nf"
+
 include { KRAKEN }                 from "${MODULES}/kraken.nf"
+include { MINIMAP2 }               from "${MODULES}/minimap2.nf"
 include { DOWNLOAD_REFERENCE }     from "${MODULES}/download_reference.nf"
 include { COVERAGE_SUMMARY }       from "${MODULES}/coverage_summary.nf"
 include { MEDAKA_SNP_1 }           from "${MODULES}/medaka_snp-1.nf"
 include { MEDAKA_CONSENSUS }       from "${MODULES}/medaka_consensus.nf"
 include { MASK }                   from "${MODULES}/mask.nf" # use custom mask depth below 20x coverage are discarded with 'N' in the consensus
-include { MINIMAP2 }           from "${MODULES}/minimap2.nf"
-include { ALIGN_TRIM_1 }       from "${MODULES}/align_trim-1.nf"
-include { ALIGN_TRIM_2 }       from "${MODULES}/align_trim-2.nf"
-include { MEDAKA_1 }           from "${MODULES}/medaka-1.nf"
-include { MEDAKA_2 }           from "${MODULES}/medaka-2.nf"
-include { MEDAKA_SNP_1 }       from "${MODULES}/medaka_snp-1.nf"
-include { MEDAKA_SNP_2 }       from "${MODULES}/medaka_snp-2.nf"
-include { VCF_MERGE }          from "${MODULES}/vcf_merge.nf"
-include { LONGSHOT }           from "${MODULES}/longshot.nf"
-include { VCF_FILTER }         from "${MODULES}/vcf_filter.nf"
-include { MAKE_DEPTH_MASK }    from "${MODULES}/make_depth_mask.nf"
-include { MASK }               from "${MODULES}/mask.nf"
-include { BCFTOOLS_CONSENSUS } from "${MODULES}/bcftools_consensus.nf"
-include { FASTA_HEADER }       from "${MODULES}/fasta_header.nf"
-include { CONCAT_FOR_MUSCLE }  from "${MODULES}/concat_for_muscle.nf"
-include { MUSCLE }             from "${MODULES}/muscle.nf"
-include { CONCAT }             from "${MODULES}/concat.nf"
-include { MAFFT }              from "${MODULES}/mafft.nf"
-include { SUMMARY_STATS }      from "${MODULES}/summary_stats.nf"
-include { REPORT }             from "${MODULES}/report.nf"
+include { SUMMARY_STATS }          from "${MODULES}/summary_stats.nf" #add N50, coverage, etc. to the final report
+
 
 // -----------------------------------------------------------------------------
 // Param defaults (CLI/GUI can override). No filesystem ops at compile time.
